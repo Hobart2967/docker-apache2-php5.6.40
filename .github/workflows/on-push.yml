@@ -12,22 +12,6 @@ jobs:
       packages: write
     name: Release ${{ matrix.mc_version }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        mc_version:
-          - 1.20.1
-          #- 1.20.2
-          #- 1.20.3
-          #- 1.20.4
-          #- 1.20.5
-          #- 1.20.6
-          #- 1.21
-          #- 1.21.1
-          #- 1.21.2
-          #- 1.21.3
-          #- 1.21.4
-          #- 1.21.5
-
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node
@@ -50,5 +34,4 @@ jobs:
             semantic-release
         if: github.ref_name == 'main'
         env:
-          MC_VERSION: ${{ matrix.mc_version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
