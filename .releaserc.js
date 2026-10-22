@@ -20,8 +20,8 @@ module.exports = {
 		[
 			'@semantic-release/exec',
 			{
-				prepareCmd: './build.sh ${nextRelease.version}',
-				publishCmd: './release.sh ${nextRelease.version}',
+				prepareCmd: './.github/workflows/build.sh ${nextRelease.version}',
+				publishCmd: './.github/workflows/release.sh ${nextRelease.version}',
 			},
 		],
 		[
